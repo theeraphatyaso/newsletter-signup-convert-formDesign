@@ -45,6 +45,7 @@ document.getElementById(`submit-button`).onclick = () => {
         document.getElementById(`valid-error`).style.display = "none";
         document.querySelector(`.information-receive`).style.display = "none";
         document.querySelector(`.thanks-service`).style.display = "block";
+        document.getElementById(`email-show`).innerText = inputData;
     }
 }
 

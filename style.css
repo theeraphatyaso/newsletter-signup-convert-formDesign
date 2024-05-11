@@ -13,6 +13,9 @@
     font-family: 'Roboto-Regular';
     color: var(--Charcoal_Grey);
 }
+html {
+    font-size: 10px;
+}
 body {
     caret-color: transparent;
     background-color: var(--Charcoal_Grey);
@@ -24,17 +27,17 @@ body {
     --Grey: hsl(231, 7%, 60%);
     --Light-Grey: hsl(0, 0%, 67%);
     --White: hsl(0, 0%, 100%);
-    --Font_size_paragraph: 16px;
+    --Font_size_paragraph: 0.7rem;
     --Box_radius: 20px;
 }
 h1 {
     font-family: 'Roboto-Bold';
-    font-size: calc(var(--Font_size_paragraph) + 30px);
-    line-height: calc(var(--Font_size_paragraph) + 30px);
+    font-size: calc(var(--Font_size_paragraph) + 3rem);
+    line-height: calc(var(--Font_size_paragraph) + 3rem);
 }
 p {
-    font-size: var(--Font_size_paragraph);
-    line-height: calc(var(--Font_size_paragraph) + 9px);
+    font-size: calc(var(--Font_size_paragraph) + 0.6rem);
+    line-height: calc(var(--Font_size_paragraph) + 1rem);
 }
 span {
     font-weight: bold;
@@ -43,7 +46,7 @@ span {
     width: 100%;
     height: 7vh;
     border-radius: calc(var(--Box_radius) - 15px);
-    font-size: calc(var(--Font_size_paragraph) - 3px);
+    font-size: calc(var(--Font_size_paragraph) + 0.5rem);
     cursor: pointer;
 }
 input {
@@ -64,7 +67,7 @@ button {
     display: block;
     border: none;
     border-radius: calc(var(--Box_radius) - 15px);
-    font-size: calc(var(--Font_size_paragraph) - 3px);
+    font-size: calc(var(--Font_size_paragraph) + 0.3rem);
     font-weight: bold;
     color: var(--White);
     transition: 0.3s;
@@ -75,7 +78,7 @@ button:hover, button:active {
 }
 .container {
     /* width: 50%;
-    height: 70%; */
+    height: 75%; */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -87,10 +90,11 @@ button:hover, button:active {
     padding: 20px;
 }
 .container ul {
-    margin-bottom: 30px;
+    margin-bottom: 8%;
 }
 .container ul li {
-    line-height: 30px;
+    font-size: calc(var(--Font_size_paragraph) + 0.6rem);
+    line-height: calc(var(--Font_size_paragraph) + 2rem);
     display: flex;
     align-items: center;
     list-style: none;
@@ -111,10 +115,11 @@ button:hover, button:active {
     background-position: center;
 }
 .container h1 {
-    font-size: calc(var(--Font_size_paragraph) + 30px);
+    font-size: calc(var(--Font_size_paragraph) + 3.9rem);
+    margin-bottom: 8%;
 }
 .container h4 {
-    font-size: calc(var(--Font_size_paragraph) - 4px);
+    font-size: calc(var(--Font_size_paragraph) + 0.2rem);
 }
 .label-input {
     display: flex;
@@ -128,18 +133,22 @@ button:hover, button:active {
     display: flex;
 }
 .left-content{
-    width: 60%;
-    padding: 0px 30px;
+    width: 55%;
+    padding: 80px 50px 80px 40px;
     align-self: center;
+    justify-content: center;
 }
-.left-content :is(h1,h4,p) {
-    margin-bottom: 10px;
+.left-content h4 {
+    margin-bottom: 3%;
+}
+.left-content p {
+    margin-bottom: 4%;
 }
 .left-content :is(input) {
-    margin-bottom: 20px;
+    margin-bottom: 5%;
 }
 .right-content {
-    width: 40%;
+    width: 45%;
     overflow: hidden;
     border: none;
     border-radius: calc(var(--Box_radius) - 10px);
@@ -152,12 +161,247 @@ button:hover, button:active {
     object-fit:cover;
     object-position: right 3%;
 }
+#image-windows {
+    display: block;
+}
+#image-mobile {
+    display: none;
+    object-fit:cover;
+    object-position: center;
+}
 .thanks-service {
-    width: 400px;
-    padding: 30px 10px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    padding-top: 0px;
     margin: 10px 20px;
     display: none;
 }
-.thanks-service *:not(button){
-    margin-bottom: 20px;
+.thanks-service img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10% !important;
+}
+.thanks-service h1 {
+    margin-bottom: 8% !important;
+}
+.thanks-service p {
+    margin-bottom: 10% !important;
+}
+
+@media only screen and (max-width: 1440px) {
+    :root {
+        --Font_size_paragraph: 0.5rem;
+    }
+    .container :where(input,button) {
+        height: 5vh;
+    }
+    .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 3.5rem);
+        margin-bottom: 8%;
+    }
+    .container ul li::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        margin-right: 2%;
+    }
+}
+
+/* @media only screen and (max-width: 1250px) {
+    :root {
+        --Font_size_paragraph: 0.3rem;
+    }
+    .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 3.0rem);
+        margin-bottom: 8%;
+    }
+} */
+
+@media only screen and (max-width: 1250px) {
+    :root {
+        --Font_size_paragraph: 0.15rem;
+    }
+    .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 2.5rem);
+        margin-bottom: 8%;
+    }
+    .container h4 {
+        font-size: calc(var(--Font_size_paragraph) + 0.5rem);
+    }
+    .container ul li::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 2.4rem);
+        margin-bottom: 8%;
+    }
+}
+
+@media only screen and (max-width: 995px) {
+    :root {
+        --Font_size_paragraph: 0.05rem;
+    }
+    input {
+        padding: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+    .left-content{
+        padding: 80px 30px 80px 30px;
+    }
+    .container :where(input,button) {
+        height: 4vh;
+    }
+    /* .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 2.3rem);
+        margin-bottom: 8%;
+    } */
+}
+
+@media only screen and (max-width: 925px) {
+    :root {
+        --Font_size_paragraph: 0.01rem;
+    }
+    .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 2.3rem);
+        margin-bottom: 8%;
+    }
+}
+
+@media only screen and (max-width: 895px) {
+    :root {
+        --Font_size_paragraph: 0.005rem;
+    }
+    /* .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 1.7rem);
+        margin-bottom: 8%;
+    } */
+}
+
+@media only screen and (max-width: 775px) {
+    .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 2.0rem);
+        margin-bottom: 8%;
+    }
+}
+
+@media only screen and (max-width: 735px) {
+    .left-content{
+        padding: 80px 20px 80px 20px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .left-content{
+        padding: 80px 10px 80px 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --Font_size_paragraph: 1rem;
+    }
+    input {
+        padding: 15px;
+    }
+    .container :where(input,button) {
+        height: 7.5vh;
+    }
+    .container h1 {
+        font-size: calc(var(--Font_size_paragraph) + 2.7rem);
+        margin-bottom: 5%;
+    }
+    .container h4 {
+        font-size: calc(var(--Font_size_paragraph) + 0.2rem);
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        display: block;
+        justify-content: center;
+        overflow: auto;
+    }
+    .information-receive {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    .left-content{        
+        width: 100%;
+        height: 70vh;
+        padding: 20px;
+    }
+    .right-content{
+        width: 100%;
+        height: 30vh;
+        background-color: red;
+    }
+    .container ul li {
+        align-self: start;
+        line-height: calc(var(--Font_size_paragraph) + 1.5rem);
+    }
+    .container ul li::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        margin-right: 5%;
+    }
+    #image-windows {
+        display: none;
+    }
+    #image-mobile {
+        display: block;
+    }
+    .thanks-service {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 50% 5%;
+        margin: 0px;
+        overflow: auto;
+    }
+    .thanks-service img {
+        width: 70px;
+        height: 70px;
+    }
+    .thanks-service button {
+        position: relative;
+        top: 45%;
+    }
+    .thanks-service p {
+        line-height: calc(var(--Font_size_paragraph) + 1.5rem);
+    }
+}
+
+@media only screen and (max-width: 394px) {
+    .container ul li:first-child:before {
+        transform: translate(0%,-65%);
+    }
+}
+
+@media only screen and (max-width: 386px) {
+    p {
+        margin-bottom: 5%;
+    }
+    .container ul li {
+        margin-bottom: 5%;
+    }
+    .container ul li::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        margin-right: 3%;
+    }
+    .container ul li:not(:last-child)::before {
+        transform: translate(0%,-65%);
+    }
 }
